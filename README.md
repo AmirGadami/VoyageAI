@@ -57,7 +57,7 @@ cd voyageAi
 ### 2. Set Up the Environment
 ```bash
 conda env create -f environment.yml
-conda activate voyageai
+conda activate lmms
 ```
 
 ### 3. Add API Keys
