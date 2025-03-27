@@ -40,7 +40,7 @@ with gr.Blocks() as demo:
     start_btn = gr.Button("Start Chat")
     
     with gr.Row():
-        chatbox = gr.Chatbot(height=600)
+        chatbox = gr.Chatbot(height=700)
         image_output = gr.Image(label="Generated Image", type="pil", height=500)
 
     start_btn.click(fn=start_conv, inputs=[], outputs=[chatbox, image_output])
