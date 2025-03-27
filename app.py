@@ -37,11 +37,12 @@ def start_conv():
 
 with gr.Blocks() as demo:
     gr.Markdown("## 🎙️ Claude & GPT Travel Chat")
-
     start_btn = gr.Button("Start Chat")
-    chatbox = gr.Chatbot()
-    image_output = gr.Image(label="Generated Image", type="pil",height=500)
-    start_btn.click(fn=start_conv, inputs=[], outputs=[chatbox, image_output])
-
     
-demo.launch()
+    with gr.Row():
+        chatbox = gr.Chatbot(height=600)
+        image_output = gr.Image(label="Generated Image", type="pil", height=500)
+
+    start_btn.click(fn=start_conv, inputs=[], outputs=[chatbox, image_output])
+    
+demo.launch(inbrowser=True)
