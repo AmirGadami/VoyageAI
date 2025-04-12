@@ -1,103 +1,70 @@
-# 🌍 VoyageAi
+# VoyageAI
 
-**VoyageAi** is an interactive multi-agent system where **Claude** (as a curious traveler) chats with **GPT** (as a travel assistant). Together, they simulate a smart, multimodal travel conversation powered by **images**, **audio**, and dynamic **tool use**.
+**VoyageAI** is an interactive multi-agent system that simulates a dynamic, multimodal travel conversation between two intelligent agents. One agent (Claude) acts as a curious traveler asking questions, while the other (GPT) serves as a travel assistant, using tools, generating images, and speaking via audio to deliver rich, engaging responses. The system combines structured function calling, DALL·E image generation, OpenAI text-to-speech, and a Gradio interface to present a real-time, visually and audibly enriched chat experience.
 
-> 🚽 The name *VoyageAi* reflects the spirit of exploration: "voyage" representing travel, and "AI" for the intelligent agents navigating the journey.
+## System Highlights
 
----
+- **Dual-Agent Dialogue**: Claude and GPT engage in contextual, travel-related conversation.
+- **Tool Calling**: GPT uses structured function calling to retrieve real-time ticket prices.
+- **Image Generation**: GPT generates vibrant travel posters using DALL·E.
+- **Text-to-Speech**: Both agents use OpenAI’s TTS models to simulate voice responses.
+- **Gradio Chat UI**: A clean interface streams their conversation, images, and audio in real time.
 
-## ✨ Features
+## Technologies Used
 
-### 🤖 Two AI Agents
-- **Claude** asks detailed travel questions (customer)  
-- **GPT** responds with assistance, prices, and suggestions (agent)
+- Python 3.11
+- OpenAI GPT-4 / DALL·E / TTS APIs
+- Anthropic Claude via API
+- Gradio for frontend interface
+- Conda for environment management
 
-### 🛠️ Tool Calling
-- GPT uses structured function calling to fetch real-time ticket prices via a custom tool
+## Setup
 
-### 🖼️ Image Generation
-- GPT generates vibrant, pop-art-style travel posters using **DALL·E 3**
+### 1. Clone the Repository
 
-### 🔊 Text-to-Speech
-- GPT and Claude "speak" using OpenAI's TTS model (voices: Alloy & Onyx)
-
-### 💬 Real-Time Chat Interface
-- Gradio UI shows the conversation streaming line-by-line with chat bubbles and images
-
-### 📸 Sample Output
-
-![Sample Output](sample.png)
-
----
-
-## 📂 Project Structure
-
-```
-voyageAi/
-├── app.py               # Main app and Gradio interface
-├── llm_agents.py        # GPT + Claude logic (tool use, image, audio)
-├── config.py            # System prompts, model names
-├── utills.py            # Helper functions (tools, pricing, image handling)
-├── environment.yml      # Conda environment setup
-├── README.md            # Project documentation
-├── sample.png           # Sample generated output
-└── notebook/            # Experimental notebooks and scratchpad
-```
-
----
-
-## 🚀 Getting Started
-
-### 1. Clone the Repo
 ```bash
 git clone https://github.com/amirgadami/voyageAi.git
 cd voyageAi
 ```
 
-### 2. Set Up the Environment
+### 2. Create and Activate the Conda Environment
+
 ```bash
 conda env create -f environment.yml
-conda activate lmms
+conda activate llms
 ```
 
-### 3. Add API Keys
-Create a `.env` file:
-```
+### 3. Set Environment Variables
+
+Create a `.env` file in the root directory with the following content:
+
+```env
 OPENAI_API_KEY=your_openai_key
 ANTHROPIC_API_KEY=your_anthropic_key
 ```
 
-### 4. Run the App
+## Running the App
+
+Start the interactive Gradio interface:
+
 ```bash
 python app.py
 ```
 
----
+## Sample Output
 
-## 🤝 Contributing
+Below is a sample of the Gradio chat interface with generated image and conversation:
 
-Contributions are welcome! Feel free to fork the repo, submit a pull request, or open an issue for any improvements or ideas.
+![Sample Output](sample.png)
 
-Some fun directions to explore:
-- ✈️ User-controlled Claude input
-- 🛫 Travel itinerary generator
-- 🖼️ Image gallery per conversation
-- 📁 Chat transcript exporter (Markdown or PDF)
+## License
 
----
+MIT License
 
-## 📢 Contact
+## Author
 
-Made with ❤️ by **Amir Ghadami**
-
-For feedback, ideas, or collaboration, feel free to reach out:
-
-- 📧 **Email**: ah.ghadami75@gmail.com  
-- 🔗 **LinkedIn**: [Amirhossein Ghadami](https://www.linkedin.com/in/amirhosseinghadami/)  
-- 🕊️ **Twitter (X)**: [@Amir_ghadamii](https://x.com/Amir_ghadamii)
-
----
-
-## 🧪 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more info.
+Amirhossein Ghadami  
+[LinkedIn](https://www.linkedin.com/in/amirhosseinghadami)  
+[GitHub](https://github.com/amirgadami)  
+[Twitter](https://x.com/Amir_ghadamii)  
+[Email](mailto:ah.ghadami75@gmail.com)
